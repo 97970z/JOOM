@@ -144,9 +144,12 @@ video {
 }
 
 #roomTitle {
+  width: 100%;
   margin-bottom: 15px;
-  color: lightcyan;
+  color: rgb(187, 233, 135);
   font-size: 20px;
+  font-weight: bold;
+  text-align: end;
 }
 
 #call {
