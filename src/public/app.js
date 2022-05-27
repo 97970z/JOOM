@@ -6,7 +6,6 @@ const room = document.getElementById("room");
 const scroll1 = document.getElementById("scroll");
 
 room.hidden = true;
-
 let roomName;
 
 function addMessage(message) {

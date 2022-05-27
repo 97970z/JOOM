@@ -9,5 +9,5 @@ function clickEvent() {
   colorChange.innerHTML = `body{background: linear-gradient(45deg, #34e7e4, #ff5e57)}`;
   document.body.appendChild(colorChange);
 }
-// click.addEventListener("click", clickEvent);
+
 clickEvent();
