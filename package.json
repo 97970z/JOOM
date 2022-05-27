@@ -4,7 +4,8 @@
   "description": "WebRTC and WebSocket",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "heroku-postbuild": "npm run build"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
