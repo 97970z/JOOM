@@ -4,6 +4,7 @@ import express from "express";
 
 const app = express();
 
+// localhost:5000 으로 서버에 접속하면 home.pug를 클라이언트에 보여준다
 app.set("view engine", "pug");
 app.set("views", __dirname + "/views");
 app.use("/public", express.static(__dirname + "/public"));
@@ -32,25 +33,31 @@ function countRoom(roomName) {
   return wsServer.sockets.adapter.rooms.get(roomName)?.size;
 }
 
+// connection 이벤트 핸들러
 wsServer.on("connection", (socket) => {
-  socket["nickname"] = "Anon";
+  socket["nickname"] = "Anonymous";
+  wsServer.sockets.emit("room_change", publicRooms());
   socket.onAny((event) => {
     console.log(`Socket Event: ${event}`);
   });
+
   socket.on("enter_room", (roomName, done) => {
     socket.join(roomName);
     done();
     socket.to(roomName).emit("welcome", socket.nickname, countRoom(roomName));
     wsServer.sockets.emit("room_change", publicRooms());
   });
+
   socket.on("disconnecting", () => {
     socket.rooms.forEach((room) =>
       socket.to(room).emit("bye", socket.nickname, countRoom(room) - 1)
     );
   });
+
   socket.on("disconnect", () => {
     wsServer.sockets.emit("room_change", publicRooms());
   });
+
   socket.on("new_message", (msg, room, done) => {
     socket.to(room).emit("new_message", `${socket.nickname}: ${msg}`);
     done();

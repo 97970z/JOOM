@@ -49,6 +49,19 @@ h3 {
   color: rgb(187, 233, 135);
 }
 
+h4 {
+  margin-top: 30px;
+  text-align: center;
+  color: rgb(187, 233, 135);
+}
+
+ul {
+  margin-top: 5px;
+  list-style: none;
+  text-align: center;
+  color: rgb(187, 233, 135);
+}
+
 #welcomeForm {
   width: 100%;
   display: flex;

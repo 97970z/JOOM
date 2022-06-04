@@ -12,8 +12,10 @@ html(lang="en")
         main
             div#welcome
                 form#welcomeForm
-                    input(placeholder="room name", required, type="text")
+                    input(placeholder="채팅방 이름", required, type="text")
                     button Enter Room
+                h4 📢 채팅방 목록
+                ul
 
             div#myStream
                 div#room
@@ -21,7 +23,7 @@ html(lang="en")
                     ul#scroll
                     div.hr
                     form#msg
-                        input(placeholder="message", required, type="text")
+                        input(placeholder="메시지를 입력하세요.", required, type="text")
                         button Send
 
         script(src="/socket.io/socket.io.js")
