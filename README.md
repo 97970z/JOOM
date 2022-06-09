@@ -6,13 +6,13 @@
 - 서버에서 클라이언트 함수를 실행하기 위해서 socket.emit()의 argument로 함수를 보낸다.
 - SocketIO를 사용해서 이벤트를 제어하는 방식으로 채팅을 구현
 
-## 기능
+## 기능 ##
 
 - 채팅방 생성
 - 생성된 채팅방 목록 확인
 - 채팅 시스템
 
-## 실행
+## 실행 ##
 
 ```
 1. cd JOOM
@@ -20,10 +20,12 @@
 3. npm run dev
 4. 브라우저에서 localhost:5000
 ```
+ 
+## 구동 영상 ##
 
-## 약간의 코드
+## 약간의 코드 ##
 
-### server.js (서버)
+### server.js (서버) ##
 
 ```javascript
 socket.on("enter_room", async (roomName, done) => {
@@ -37,7 +39,7 @@ socket.on("enter_room", async (roomName, done) => {
 });
 ```
 
-### app.js (클라이언트)
+### app.js (클라이언트) ##
 
 ```javascript
 // home.pug에서 enter_room 버튼 입력 이벤트(handleRoomSubmit) Listening
