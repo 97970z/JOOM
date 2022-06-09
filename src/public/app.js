@@ -8,11 +8,11 @@ const scroll1 = document.getElementById("scroll");
 room.hidden = true;
 let roomName;
 
-function addMessage(message) {
+async function addMessage(message) {
   const ul = room.querySelector("ul");
   const li = document.createElement("li");
   li.innerText = message;
-  ul.appendChild(li);
+  await ul.appendChild(li);
   scroll1.scrollTop = scroll1.scrollHeight;
 }
 
@@ -26,13 +26,13 @@ function handleMessageSubmit(event) {
   input.value = "";
 }
 
-function initCall() {
+async function initCall() {
   room.hidden = false;
   welcome.hidden = true;
   const h3 = room.querySelector("h3");
   h3.innerText = `Room: ${roomName}`;
   const msgForm = room.querySelector("#msg");
-  msgForm.addEventListener("submit", handleMessageSubmit);
+  msgForm.addEventListener("submit", await handleMessageSubmit);
 }
 
 async function handleRoomSubmit(event) {

@@ -41,11 +41,11 @@ wsServer.on("connection", (socket) => {
     console.log(`Socket Event: ${event}`);
   });
 
-  socket.on("enter_room", (roomName, done) => {
+  socket.on("enter_room", async (roomName, done) => {
     socket.join(roomName);
     done();
     socket.to(roomName).emit("welcome", socket.nickname, countRoom(roomName));
-    wsServer.sockets.emit("room_change", publicRooms());
+    await wsServer.sockets.emit("room_change", publicRooms());
   });
 
   socket.on("disconnecting", () => {

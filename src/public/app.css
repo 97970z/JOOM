@@ -62,6 +62,14 @@ ul {
   color: rgb(187, 233, 135);
 }
 
+li {
+  text-align: left;
+}
+
+#welcome li {
+  text-align: center;
+}
+
 #welcomeForm {
   width: 100%;
   display: flex;
