@@ -23,6 +23,7 @@
  
 ## 구동 영상 ##
 http://naver.me/57XFM7KT
+https://drive.google.com/file/d/103SdhtpzpFmHTd9iKNKWFdl_mtlTqJIv/view?usp=sharing
 
 ## 약간의 코드 ##
 
