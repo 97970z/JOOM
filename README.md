@@ -20,10 +20,6 @@
 3. npm run dev
 4. 브라우저에서 localhost:5000
 ```
- 
-## 구동 영상 ##
-- http://naver.me/57XFM7KT
-- https://drive.google.com/file/d/103SdhtpzpFmHTd9iKNKWFdl_mtlTqJIv/view?usp=sharing
 
 ## 약간의 코드 ##
 
