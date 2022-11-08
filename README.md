@@ -16,7 +16,7 @@
 
 ```
 1. cd JOOM
-2. npm init
+2. npm install
 3. npm run dev
 4. 브라우저에서 localhost:5000
 ```
