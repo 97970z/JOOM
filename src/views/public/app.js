@@ -8,11 +8,11 @@ const scroll1 = document.getElementById("scroll");
 room.hidden = true;
 let roomName;
 
-async function addMessage(message) {
+function addMessage(message) {
   const ul = room.querySelector("ul");
   const li = document.createElement("li");
   li.innerText = message;
-  await ul.appendChild(li);
+  ul.appendChild(li);
   scroll1.scrollTop = scroll1.scrollHeight;
 }
 
@@ -26,19 +26,19 @@ function handleMessageSubmit(event) {
   input.value = "";
 }
 
-async function initCall() {
+function initCall() {
   room.hidden = false;
   welcome.hidden = true;
   const h3 = room.querySelector("h3");
   h3.innerText = `Room: ${roomName}`;
   const msgForm = room.querySelector("#msg");
-  msgForm.addEventListener("submit", await handleMessageSubmit);
+  msgForm.addEventListener("submit", handleMessageSubmit);
 }
 
-async function handleRoomSubmit(event) {
+function handleRoomSubmit(event) {
   event.preventDefault();
   const input = form.querySelector("input");
-  socket.emit("enter_room", input.value, await initCall);
+  socket.emit("enter_room", input.value, initCall);
   roomName = input.value;
   input.value = "";
 }

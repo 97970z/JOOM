@@ -1,18 +1,18 @@
 import http from "http";
-import SocketIO from "socket.io";
+import { Server } from "socket.io";
 import express from "express";
 
 const app = express();
 
 // localhost:5000 으로 서버에 접속하면 home.pug를 클라이언트에 보여준다
 app.set("view engine", "pug");
-app.set("views", __dirname + "/views");
-app.use("/public", express.static(__dirname + "/public"));
+app.set("views", "src/views");
+app.use("/public", express.static("src/views/public"));
 app.get("/", (_, res) => res.render("home"));
 app.get("/*", (_, res) => res.redirect("/"));
 
 const httpServer = http.createServer(app);
-const wsServer = SocketIO(httpServer);
+const wsServer = new Server(httpServer);
 
 function publicRooms() {
   const {
@@ -65,5 +65,5 @@ wsServer.on("connection", (socket) => {
   socket.on("nickname", (nickname) => (socket["nickname"] = nickname));
 });
 
-const handleListen = () => console.log(`Listening on http://localhost:5000`);
+const handleListen = () => console.log(`Listening on http://localhost:5005`);
 httpServer.listen(5005, handleListen);
