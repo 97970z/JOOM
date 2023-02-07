@@ -1,22 +1,20 @@
 # JOOM
 
-- 소켓 통신 기반 실시간 채팅
-- 싱글쓰레드 언어인 JavaScript에서 뮤텍스와 세마포어를 대신하여 async/await 비동기 처리 방식 사용
-- socket.emit() 으로 이벤트를 보내고 socket.on() 으로 받는다.
-- 서버에서 클라이언트 함수를 실행하기 위해서 socket.emit()의 argument로 함수를 보낸다.
-- SocketIO를 사용해서 이벤트를 제어하는 방식으로 채팅을 구현
+[socketchat.fly.dev](https://socketchat.fly.dev/)
 
-## 기능
+JavaScript + Socket.IO 라이브러리를 사용해서 만든 실시간 채팅 웹사이트입니다.
+주요 목표는 사용자 지연 없이 실시간으로 서로 통신할 수 있는 플랫폼을 만드는 것이었습니다.
+웹 개발에 주로 사용되는 JavaScript에 대한 기초를 다지기 위함과 Socket.IO 라이브러리를 사용해보기 위함이 주 목적이었습니다.
+
+## 주요 기능
 
 - 채팅방 생성
 - 생성된 채팅방 목록 확인
-- 채팅 시스템
+- 실시간 채팅 시스템
 
-## 실행
+## 사용 기술
 
-```
-1. cd JOOM
-2. npm install
-3. npm run dev
-4. 브라우저에서 localhost:5000
-```
+- JavaScript
+- Socket.IO
+- Node.js
+- Express
